@@ -14,11 +14,11 @@ import com.tka.repo.CustomerRepo;
 @Service
 public class CustomerService {
 
-	private final ProdectService prodectService;
+	private final ProductService prodectService;
 	@Autowired
 	CustomerRepo customerRepo;
 
-	CustomerService(ProdectService prodectService) {
+	CustomerService(ProductService prodectService) {
 		this.prodectService = prodectService;
 	}
 

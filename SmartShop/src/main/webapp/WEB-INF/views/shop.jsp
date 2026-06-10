@@ -1,44 +1,50 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>SmartShop </title>
+		<!DOCTYPE html>
+		<html>
 
-<link rel="stylesheet" href="/css/style.css">
+		<head>
+			<meta charset="UTF-8">
+			<title>SmartShop </title>
 
-</head>
-<body>
-	<jsp:include page="header.jsp" />
-    <h1>Shop Products</h1>
+			<link rel="stylesheet" href="/css/style.css">
 
-	<div class="product-grid">
-	    <c:forEach var="p" items="${product}">
+		</head>
 
-	        <div class="product-card-shop">
+		<body>
+			<jsp:include page="header.jsp" /><br>
+			<c:if test="${not empty msg}">
+					<h4>${mesag}</h4>
+				</c:if>
+			<h1>Shop Products</h1>
 
-	            <div class="image-box">
-	                <img src="${p.imagepath}" alt="${p.productname}">
-	            </div>
+			<div class="product-grid">
+				<c:forEach var="p" items="${product}">
 
-	            <div class="product-details">
-	                <h3>${p.productname}</h3>
+					<div class="product-card-shop">
 
-	                <p class="price">₹ ${p.price}</p>
+						<div class="image-box">
+							<img src="${p.imagepath}" alt="${p.productname}">
+						</div>
 
-	                <button type="button">View Product</button>
-					<button type="submit">Add to cart</button>
-	            </div>
+						<form action="/add-to-cart/${p.pid}" method="post">
 
-	        </div>
+							<div class="product-details">
+								<h3>${p.productname}</h3>
+								<p class="price">₹ ${p.price}</p>
+								<button type="submit">Add to cart</button>
 
-	    </c:forEach>
-	</div>
+							</div>
+						</form>
 
-	
-	<jsp:include page="footer.jsp" />	
-</body>
-</html>
+					</div>
+
+				</c:forEach>
+			</div>
+
+
+			<jsp:include page="footer.jsp" />
+		</body>
+
+		</html>

@@ -21,11 +21,4 @@ public class Product {
 	String imagepath;
 	
 	
-	@Override
-	public String toString() {
-		return "Product [pid=" + pid + ", productname=" + productname + ", price=" + price + ", imagepath=" + imagepath
-				+ "]";
-	}
-	
-	
 }

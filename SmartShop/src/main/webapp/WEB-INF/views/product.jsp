@@ -29,7 +29,6 @@
 
 	                <p class="price">₹ ${p.price}</p>
 
-	                <button type="button">View Product</button>
 	            </div>
 
 	        </div>
@@ -37,7 +36,7 @@
 	    </c:forEach>
 	</div>
 
-	<a href="/shop">Let's Shop--</a>
+	<a href="/shop" type="button">Let's Shop--</a>
 	
 	<jsp:include page="footer.jsp" />	
 </body>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,10 +9,12 @@
 <body>
 	<jsp:include page="header.jsp" />
 
-    <h5>${msg}</h5>
+	<c:if test="${not empty msg}">
+			<h4 class="msg">${msg}</h4>
+		</c:if>
 
     <form action="/add-customer" method="post">
-
+		<h2> Registration </h2>
         <label>Full Name:</label><br>
         <input type="text" name="name" placeholder="Enter your name"><br><br>
 

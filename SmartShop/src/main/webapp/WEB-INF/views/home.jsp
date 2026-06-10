@@ -14,6 +14,7 @@
     <div class="home-container">
         <h1>Welcome to Smart Shop</h1>
         <p>Manage Customers, Products, Cart, and Billing efficiently.</p>
+		<a href="shop">Shooping</a>
     </div>
 
     <jsp:include page="footer.jsp" />

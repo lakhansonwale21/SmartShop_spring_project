@@ -1,10 +1,13 @@
 package com.tka.controller;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.servlet.http.HttpSession;
 
+@Component
 @Controller
 public class SmartShopAppController {
 
@@ -20,7 +23,12 @@ public class SmartShopAppController {
 	}
 	
 	@GetMapping("/home")
-	public String getHomePage() {
+	public String getHomePage(HttpSession session, Model model) {
+		String username =(String) session.getAttribute("username");
+		if(username == null) {
+			model.addAttribute("msg", "Please Login First");
+			return "login";
+		}
 		return "home";
 	}
 	
@@ -30,7 +38,13 @@ public class SmartShopAppController {
 	}
 	
 	@GetMapping("/logout")
-	public String getLoggedOut(HttpSession session) {
+	public String getLoggedOut(HttpSession session, Model model) {
+		String username =(String) session.getAttribute("username");
+		if(username == null) {
+			model.addAttribute("msg", "Please Login First");
+			return "login";
+		}
+
 		session.invalidate();
 		return "index";
 	}
