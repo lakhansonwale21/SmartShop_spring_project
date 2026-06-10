@@ -1,56 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+	<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>SmartShop Bill</title>
+		<!DOCTYPE html>
+		<html>
 
-<link rel="stylesheet" href="/css/style.css">
+		<head>
+			<meta charset="UTF-8">
+			<title>SmartShop Bill</title>
 
-</head>
-<body>
-	<jsp:include page="header.jsp" />
-<div class="bill-container">
+			<link rel="stylesheet" href="/css/style.css">
 
-    <h1>SmartShop Bill</h1>
+		</head>
 
-    <table class="bill-table">
-        <thead>
-            <tr>
-                <th>Product ID</th>
-                <th>Product Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
+		<body>
+			<jsp:include page="header.jsp" />
+			<div class="bill-container">
 
-        <tbody>
-            <c:forEach items="${billProduct}" var="product">
-                <tr>
-                    <td>${product.pid}</td>
-                    <td>${product.productname}</td>
-                    <td>₹ ${product.price}</td>
-                </tr>
-            </c:forEach>
-        </tbody>
-    </table>
+				<h1>SmartShop Bill</h1>
 
-    <div class="bill-summary">
-        <span>Total Amount :</span>
-        <span class="total-price">₹ ${totalAmount}</span>
-    </div>
+				<table class="bill-table">
+					<thead>
+						<tr>
+							<th>Product ID</th>
+							<th>Product Name</th>
+							<th>Price</th>
+						</tr>
+					</thead>
 
-    <div class="btn-container">
-        <form action="#" method="post">
-            <button type="submit" class="order-btn">
-                Place Order
-            </button>
-        </form>
-    </div>
+					<tbody>
+						<c:forEach items="${billProduct}" var="product">
+							<tr>
+								<td>${product.pid}</td>
+								<td>${product.productname}</td>
+								<td>₹ ${product.price}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 
-</div>
-<jsp:include page="footer.jsp" />
-</body>
-</html>
+				<div class="bill-summary">
+					<span>Total Amount :</span>
+					<span class="total-price">₹ ${totalAmount}</span>
+				</div>
+
+				<div class="btn-container">
+					<form action="#" method="post">
+						<button type="#" class="order-btn">
+							Place Order
+						</button>
+
+						<span>
+							<button onclick="window.print()" class="print-button">Print Bill</button>
+						</span>
+
+					</form>
+
+
+
+				</div>
+
+			</div>
+			<jsp:include page="footer.jsp" />
+		</body>
+
+		</html>

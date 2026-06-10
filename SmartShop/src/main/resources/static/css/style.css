@@ -610,6 +610,30 @@ body>h4 {
     transform:translateY(-2px);
 }
 
+.print-button{
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.print-button:hover{
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.print-button:active{
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
 /* =========================
    RESPONSIVE
 ========================= */
