@@ -17,7 +17,8 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-
+	justify-content: center; /* Horizontal center */
+	   align-items: center;     /* Vertical center */
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -632,6 +633,78 @@ body>h4 {
 .print-button:active{
     transform: translateY(0);
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+/* Container */
+.greeting-container {
+    width: 450px;
+    padding: 40px;
+    background: rgb(0, 255, 64);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Heading */
+.greeting-container h1 {
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+.greeting-container p {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.greeting-container a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(51, 128, 4);
+    color: white;
+    padding: 12px 25px;
+    margin: 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.greeting-container a:hover {
+    background-color: rgb(38, 97, 3);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active Effect */
+.greeting-container a:active {
+    transform: scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .greeting-container {
+        padding: 30px 20px;
+    }
+
+    .greeting-container h1 {
+        font-size: 28px;
+    }
+
+    .greeting-container p {
+        font-size: 16px;
+    }
+
+    .greeting-container a {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
 }
 
 /* =========================

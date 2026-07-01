@@ -127,4 +127,9 @@ public class ProductController {
 			
 		
 	}
+	
+	@PostMapping("/order")
+	public String getorderpage() {
+		return "Gretting";
+	}
 }

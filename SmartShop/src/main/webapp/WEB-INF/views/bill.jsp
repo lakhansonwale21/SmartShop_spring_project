@@ -44,7 +44,7 @@
 				</div>
 
 				<div class="btn-container">
-					<form action="#" method="post">
+					<form action="/order" method="post">
 						<button type="#" class="order-btn">
 							Place Order
 						</button>

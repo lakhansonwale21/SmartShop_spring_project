@@ -18,8 +18,8 @@
 				<h1>Your Cart</h1>
 
 				<c:if test="${not empty msg}">
-						<h4 class="msg">${msg}</h4>
-					</c:if>
+					<h4 class="msg">${msg}</h4>
+				</c:if>
 				<c:forEach var="p" items="${cartproduct}">
 					<div class="cart-card">
 
@@ -33,24 +33,24 @@
 							</p>
 
 							<form action="/remove-from-cart/${p.pid}" method="post">
-							                <button class="remove-btn" type="submit">
-							                    Remove
-							                </button>
-							            </form>
-										
+								<button class="remove-btn" type="submit">
+									Remove
+								</button>
+							</form>
+
 						</div>
 
 					</div>
 
 				</c:forEach>
 				<div class="cart-card">
-				    Total Amount :
-				    <c:if test="${totalAmount != null}">
-				        <span class="price">₹ ${totalAmount}</span>
-				    </c:if>
+					Total Amount :
+					<c:if test="${totalAmount != null}">
+						<span class="price">₹ ${totalAmount}</span>
+					</c:if>
 				</div>
 			</div>
-			
+
 			<a href="/bill">Shop Now</a>
 
 			<jsp:include page="footer.jsp" />
